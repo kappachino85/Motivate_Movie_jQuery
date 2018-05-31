@@ -190,12 +190,22 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain\Movies.cs" />
+    <Compile Include="Domain\Quotes.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Requests\MovieAddRequest.cs" />
+    <Compile Include="Models\Requests\MovieUpdateRequest.cs" />
+    <Compile Include="Models\Requests\QuoteAddRequest.cs" />
+    <Compile Include="Models\Requests\QuoteUpdateRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Interfaces\IBaseService.cs" />
+    <Compile Include="Services\Interfaces\IMovieService.cs" />
+    <Compile Include="Services\Interfaces\IQuoteService.cs" />
+    <Compile Include="Services\MovieService.cs" />
+    <Compile Include="Services\QuoteService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -239,7 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
