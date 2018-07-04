@@ -53,7 +53,17 @@ namespace Motivate_jQuery.Services
 
         public void UpdateById(QuoteUpdateRequest model)
         {
-
+            _baseService.SqlAdapter.ExecuteQuery(new DbCommandDef
+            {
+                DbCommandText = "dbo.Quotes_UpdateById",
+                DbCommandType = System.Data.CommandType.StoredProcedure,
+                DbParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@Id", model.Id),
+                    new SqlParameter("@Quote", model.Quote),
+                    new SqlParameter("@Author", model.Author)
+                }
+            });
         }
 
         public int Insert(QuoteAddRequest model)
@@ -75,7 +85,15 @@ namespace Motivate_jQuery.Services
 
         public void DeleteById(int id)
         {
-
+            _baseService.SqlAdapter.ExecuteQuery(new DbCommandDef
+            {
+                DbCommandText = "dbo.Quotes_DeleteById",
+                DbCommandType = System.Data.CommandType.StoredProcedure,
+                DbParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@Id", id)
+                }
+            });
         }
     }
 }
